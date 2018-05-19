@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+    <!-- SEO页面关键词 -->
+    <meta name="keywords" content="">
+    <!-- SEO页面描述 -->
+    <meta name="description" content="">
+    <!-- 任何IE版本都以当前版本所支持的最高级标准模式渲染 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
+    <style>
+        html{
+            font-size: 100px;
+        }
+        body{
+            font-size: 20px;
+        }
+        .title{
+            margin-top: .3rem;
+            background-color: green;
+        }
+    </style>
+
+</head>
+<body ng-app="myApp">
+<runoob-directive></runoob-directive>
+<div runoob-directive></div>
+<div class="runoob-directive"></div>
+<!--  dirctive: runoob-directive  -->
+
+<script src="https://cdn.bootcss.com/angular.js/1.6.9/angular.js"></script>
+<script src="https://cdn.bootcss.com/angular.js/1.6.9/angular-route.js"></script>
+<script>
+    var app = angular.module("myApp", []);
+    app.directive("runoobDirective", function() {
+        return {
+            restrict : "A",
+            template : "<h1>自定义指令!</h1>"
+        };
+    });
+
+</script>
+</body>
+</html>

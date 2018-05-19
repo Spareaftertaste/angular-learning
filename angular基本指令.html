@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+    <!-- SEO页面关键词 -->
+    <meta name="keywords" content="">
+    <!-- SEO页面描述 -->
+    <meta name="description" content="">
+    <!-- 任何IE版本都以当前版本所支持的最高级标准模式渲染 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
+    <style>
+        html{
+            font-size: 100px;
+        }
+        body{
+            font-size: 20px;
+        }
+        .title{
+            margin-top: .3rem;
+            background-color: green;
+        }
+    </style>
+</head>
+<body ng-app="testApp">
+<div>
+    <div class="title">数据双向绑定</div>
+    <input ng-model="name">
+    <div ng-bind="name"></div>
+
+    <div class="title">angular数字</div>
+    <div ng-init="q=1;w=2">q=1,w=2</div>
+    <div>
+        q+2*w的结果等于<span ng-bind="q+w*2"></span>
+    </div>
+
+    <div class="title">angular字符串</div>
+    <div ng-init="firstName = 'ergou';lastName = 'wang'"></div>
+    <div>
+        名字：<span ng-bind="firstName+lastName"></span>
+    </div>
+
+    <div class="title">angular对象</div>
+    <div ng-init="person={firstName:'Li',lastName:'XiangHe'}"></div>
+    <div>
+        <div>{{person}}</div>
+        <div>
+            姓：<span ng-bind="person.firstName"></span>,名：<span ng-bind="person.lastName"></span>
+        </div>
+    </div>
+
+    <div class="title">angulars数组</div>
+    <div ng-init="arr=[1,2,5,6]"></div>
+    <div>
+        <div>{{arr}}</div>
+        <div>数组中第三个数为：<span ng-bind="arr[2]"></span></div>
+    </div>
+
+    <div class="title">angular中ng-modle  ng-bind  {{}}三种数据绑定方式的区别</div>
+    <div ng-init="a=1">初始化a=1</div>
+    <div>
+        <input ng-bind="a"><span>ng-bing对于input标签是无效的，我jio的应该是和ng-bind数据绑定的方式决定的</span>
+        <div ng-bind="a"></div><span>div标签就可以正常使用ng-bind指令了</span>
+    </div>
+    <div>
+        <input ng-model="a"><span>ng-model</span>
+    </div>
+    <div>
+        <input value="{{a}}"><span>"{'{}'}"</span>
+    </div>
+
+    <div class="title">ng-repeat指令</div>
+    <div ng-init="b=['yahaha',arr,9,'zelda']">初始化一个二维数组</div>
+    <div>下面利用ng-repeat指令遍历数组b</div>
+    <ul>
+        <li ng-repeat="x in b">
+            {{x}}
+        </li>
+    </ul>
+
+</div>
+<script src="https://cdn.bootcss.com/angular.js/1.6.9/angular.js"></script>
+<script src="https://cdn.bootcss.com/angular.js/1.6.9/angular-route.js"></script>
+</body>
+</html>
